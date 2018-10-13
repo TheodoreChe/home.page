@@ -1,6 +1,12 @@
-const Index = () => (
-    <div>
-        <p>Hello World!</p>
-    </div>
-)
-export default Index
+import React, { Component } from "react";
+import Layout from "../src/components/common/Layout";
+
+export default class Index extends Component {
+  render() {
+    return (
+      <Layout>
+        <p>Hello</p>
+      </Layout>
+    );
+  }
+}
