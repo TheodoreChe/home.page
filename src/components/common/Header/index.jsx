@@ -4,7 +4,7 @@ import styled from "styled-components";
 const HeaderWrap = styled.div`
   border-top: 8px solid hsl(47, 100%, 57%);
   color: hsl(0, 0%, 0%);
-  padding: 40px 0;
+  padding: 30px;
 `;
 
 const Logo = styled.span`
@@ -12,9 +12,10 @@ const Logo = styled.span`
   font-weight: 700;
 `;
 
+
 const Header = () => (
   <HeaderWrap>
-    <Logo>Theodore Chernin</Logo>
+    <Logo>{`<Theodore Chernin />`}</Logo>
   </HeaderWrap>
 );
 
