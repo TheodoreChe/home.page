@@ -12,7 +12,6 @@ const Logo = styled.span`
   font-weight: 700;
 `;
 
-
 const Header = () => (
   <HeaderWrap>
     <Logo>{`<Theodore Chernin />`}</Logo>
