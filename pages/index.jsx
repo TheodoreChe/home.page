@@ -1,13 +1,18 @@
 import React, { Component } from "react";
-import Layout from "../src/components/common/Layout";
-import { Typography } from "@smooth-ui/core-sc";
+import Layout from "Common/Layout";
+import { Container } from "Common/Layout/style";
+import { Hello } from "Common/Typography";
 
 export default class Index extends Component {
   render() {
-    return (
-      <Layout>
-        <Typography variant="h1">Hello</Typography>
-      </Layout>
-    );
+    return <Layout>
+        <Container>
+          <Hello>
+            I&nbsp;am a&nbsp;Front-end Developer. I make websites and web
+            applications. I have 7 years commercial experience. <br />
+            Site is&nbsp;under construction now
+          </Hello>
+        </Container>
+      </Layout>;
   }
 }

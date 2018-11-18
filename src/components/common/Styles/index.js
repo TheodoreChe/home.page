@@ -1,8 +1,8 @@
-import { theme } from "@smooth-ui/core-sc";
+import global from './global';
 
 const main = {
-  ...theme,
-  headingsFontFamily: 'Lato', 
+  headingsFontFamily: "Noto Sans",
+  fontFamily: "IBM Plex Serif"
 };
 
-export { main };
+export { main, global };

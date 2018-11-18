@@ -1,0 +1,16 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["/"],
+        "alias": {
+          "Common": "./src/components/common",
+          "Blog": "./src/components/blog",
+          "Shaders": "./src/components/shaders"
+        }
+      }
+    ]
+  ]
+}

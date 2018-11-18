@@ -1,22 +1,27 @@
 import Link from "next/link";
-import styled from "styled-components";
+import { Container } from "Common/Layout/style";
+import { withRouter } from "next/router";
 
-const HeaderWrap = styled.div`
-  border-top: 6px solid hsl(47, 100%, 57%);
-  color: hsl(0, 0%, 0%);
-  padding: 30px;
-`;
+import { HeaderWrap, Logo, HeaderLink } from "./style";
 
-const Logo = styled.span`
-  font-family: Lato;
-  font-weight: 700;
-  font-size: 18px;
-`;
+const Header = ({ router }) => {
+  const route = router != null ? router.route : "/";
+  return (
+    <HeaderWrap>
+      <Container>
+        {route != "/" ? (
+          <Link href="/">
+            <Logo route={route}>{`<Theodore Chernin />`}</Logo>
+          </Link>
+        ) : (
+          <Logo route={route}>{`<Theodore Chernin />`}</Logo>
+        )}
+        <Link href="/blog">
+          <HeaderLink>Blog</HeaderLink>
+        </Link>
+      </Container>
+    </HeaderWrap>
+  );
+};
 
-const Header = () => (
-  <HeaderWrap>
-    <Logo>{`<Theodore Chernin />`}</Logo>
-  </HeaderWrap>
-);
-
-export default Header;
+export default withRouter(Header);

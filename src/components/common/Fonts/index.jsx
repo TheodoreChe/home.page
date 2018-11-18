@@ -9,9 +9,12 @@ export default class Fonts extends Component {
     componentDidMount() {
         if (WebFont != null) {
             WebFont.load({
-                google: {
-                    families: ['Lato:700', 'Roboto:400']
-                }
+              google: {
+                families: [
+                  "Noto Sans:400,700",
+                  "IBM Plex Serif:400"
+                ]
+              }
             });
         }
     }

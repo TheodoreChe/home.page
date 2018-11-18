@@ -1,14 +1,13 @@
 import { Component } from "react";
-import { injectGlobal } from "styled-components";
-import { ThemeProvider, globalStyle } from "@smooth-ui/core-sc";
+import { ThemeProvider, injectGlobal } from "styled-components";
 import reset from "styled-reset";
 import Head from "next/head";
 
-import { main } from "../Styles";
-import Fonts from "../Fonts";
-import Header from "../Header";
+import { main, global } from "Common/Styles";
+import Fonts from "Common/Fonts";
+import Header from "Common/Header";
 
-injectGlobal`${reset} ${globalStyle()}`;
+injectGlobal`${reset} ${global}`;
 
 export default class Layout extends Component {
   render() {
@@ -17,10 +16,15 @@ export default class Layout extends Component {
       <div>
         <Head>
           <title>Theodore Chernin</title>
+          <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1" />
         </Head>
         <Fonts />
-        <Header />
-        <ThemeProvider theme={main}>{children}</ThemeProvider>
+        <ThemeProvider theme={main}>
+          <div>
+            <Header />
+            {children}
+          </div>
+        </ThemeProvider>
       </div>
     );
   }
