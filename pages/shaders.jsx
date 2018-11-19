@@ -5,7 +5,7 @@ import { Surface } from "gl-react-dom";
 
 import Layout from "Common/Layout";
 import { Container } from "Common/Layout/style";
-import { H1, Paragraph } from "Common/Typography";
+import { H1, H2 } from "Common/Typography";
 import timeLoop from "Common/TimeLoop";
 
 const shaders = Shaders.create({
@@ -55,7 +55,17 @@ const shaders = Shaders.create({
         void main() {
             vec2 st = uv * 7.0;
             vec3 color = vec3(.0);
-            float u_time = time * 0.006;
+            float u_time = -time * 0.006;
+
+            float rotation = -2.4;
+            float mid = 0.;
+
+            st = vec2(
+              cos(rotation) * (uv.x - mid) + sin(rotation) * (uv.y - mid) + mid,
+              cos(rotation) * (uv.y - mid) - sin(rotation) * (uv.x - mid) + mid
+            );
+
+            st *= 10.;
 
             vec2 q = vec2(0.);
             q.x = fbm( st );
@@ -94,9 +104,9 @@ export default class Index extends Component {
       <Layout>
         <Container>
           <H1>Shaders</H1>
-          <Paragraph>Over time, the number of shaders will be more.</Paragraph>
+          <H2>Fractional Brownian motion</H2>
           <div>
-            <Surface width={300} height={300}>
+            <Surface width={400} height={400}>
               <LoopNoiseShader />
             </Surface>
           </div>
